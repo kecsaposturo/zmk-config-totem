@@ -37,15 +37,6 @@
             };
     };
 
-    behaviors {
-        td0: tap_dance_layer {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&to BASE>, <&to SYM>, <&to BTC>;
-        };
-    };
-
         keymap {
                 compatible = "zmk,keymap";
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -59,7 +50,7 @@ label= "BASE"                              ;
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃     A     ┃     S     ┃     D     ┃     F     ┃     G     ┃   ┃     H     ┃     J     ┃     K     ┃     L     ┃    ; :    ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃ td LAYER  ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃    , <    ┃    . >    ┃    / ?    ┃  tog SYM  ┃
+// ┃   SHIFT   ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     N     ┃     M     ┃    , <    ┃    . >    ┃    / ?    ┃   SHIFT   ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃    TAB    ┃ SPC  SYM  ┃    ESC    ┃   ┃   ENTER   ┃ BSPC  SYM ┃  repeat   ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -67,8 +58,8 @@ label= "BASE"                              ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp Q       &kp W       &kp E       &kp R       &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
-                &kp A       &kp S       &kp D       &mt LSHFT F &kp G           &kp H       &mt RSHFT J &kp K       &kp L       &kp SEMI
-    &td0        &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &tog SYM
+                &kp A       &kp S       &kp D       &kp F       &kp G           &kp H       &kp J       &kp K       &kp L       &kp SEMI
+    &kp LSHFT   &kp Z       &kp X       &kp C       &kp V       &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
                                         &kp TAB  &lt SYM SPACE  &kp ESC         &kp RET   &lt SYM BSPC  &key_repeat
                         >;
                 };
@@ -83,9 +74,9 @@ label= "SYM"                              ;
 //             ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 //             ┃    1 !    ┃    2 @    ┃    3 #    ┃    4 $    ┃    5 %    ┃   ┃    6 ^    ┃    7 &    ┃    8 *    ┃    9 (    ┃    0 )    ┃
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-//             ┃    [ ]    ┃    { }    ┃    ( )    ┃    = +    ┃    < >    ┃   ┃    ' "    ┃   LEFT    ┃     UP    ┃   RIGHT   ┃     |     ┃
+//             ┃     <     ┃     (     ┃     {     ┃    = +    ┃     [     ┃   ┃    ' "    ┃   LEFT    ┃     UP    ┃   RIGHT   ┃     |     ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃ td LAYER  ┃           ┃           ┃           ┃    - _    ┃           ┃   ┃           ┃    ` ~    ┃    DOWN   ┃     ~     ┃    \ |    ┃  tog SYM  ┃
+// ┃   SHIFT   ┃     >     ┃     )     ┃     }     ┃    - _    ┃     ]     ┃   ┃           ┃    ` ~    ┃    DOWN   ┃     ~     ┃    \ |    ┃   SHIFT   ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 //                                     ┃    TAB    ┃ SPC  SYM  ┃    ESC    ┃   ┃   ENTER   ┃ BSPC  SYM ┃  repeat   ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -93,8 +84,8 @@ label= "SYM"                              ;
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
                 &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0
-         &mt RBKT LBKT &mt RBRC LBRC &mt RPAR LPAR &mt LSHFT EQUAL &mt GT LT    &kp APOS &mt RSHFT LEFT &kp UP      &kp RIGHT   &kp PIPE
-    &trans      &none       &none       &none       &kp MINUS   &none           &none       &kp GRAVE   &kp DOWN    &kp TILDE   &kp BSLH    &trans
+                &kp LT      &kp LPAR    &kp LBRC    &kp EQUAL   &kp LBKT        &kp APOS    &kp LEFT    &kp UP      &kp RIGHT   &kp PIPE
+    &trans      &kp GT      &kp RPAR    &kp RBRC    &kp MINUS   &kp RBKT        &none       &kp GRAVE   &kp DOWN    &kp TILDE   &kp BSLH    &trans
                                         &trans      &trans      &trans          &trans      &trans      &trans
                         >;
                 };
