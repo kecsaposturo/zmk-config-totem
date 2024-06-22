@@ -30,10 +30,10 @@
 / {
      combos {
             compatible = "zmk,combos";
-            combo_esc {
+            combo_btc {
                 timeout-ms = <50>;
                 key-positions = <17 19>;
-                bindings = <&kp ESC>;
+                bindings = <&mo 2>;
             };
     };
 
@@ -102,17 +102,17 @@ label= "BTC"                               ;
 //             ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 //             ┃ BT_DISC 1 ┃ BT_DISC 2 ┃ BT_DISC 3 ┃ BT_DISC 4 ┃ BT_DISC 5 ┃   ┃ BT_DISC 1 ┃ BT_DISC 2 ┃ BT_DISC 3 ┃ BT_DISC 4 ┃ BT_DISC 5 ┃
 // ┏━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┓
-// ┃  to BASE  ┃           ┃           ┃           ┃ SYS RESET ┃ BOOT LDR  ┃   ┃ BOOT LDR  ┃ SYS RESET ┃           ┃           ┃           ┃ to BASE   ┃
+// ┃ SYS RESET ┃ BOOT LDR  ┃           ┃           ┃ BT_CLR    ┃ BT PREV   ┃   ┃ BT PREV   ┃ BT_CLR    ┃           ┃           ┃ BOOT LDR  ┃ SYS RESET ┃
 // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-//                                     ┃ BT_CLR    ┃ BT NEXT   ┃  BT PREV  ┃   ┃  BT PREV  ┃ BT NEXT   ┃ BT_CLR    ┃
+//                                     ┃           ┃ BT NEXT   ┃           ┃   ┃           ┃ BT NEXT   ┃           ┃
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
  bindings = <
 // ╷           ╷           ╷           ╷           ╷           ╷           ╷   ╷           ╷           ╷           ╷           ╷           ╷           ╷
 
            &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5     &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5
          &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 &bt BT_DISC 5  &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 &bt BT_DISC 5
-    &to 0       &none       &none       &none       &sys_reset  &bootloader     &bootloader &sys_reset  &none       &none       &none       &to 0
-                                        &bt BT_CLR &bt BT_NXT  &bt BT_PRV       &bt BT_PRV  &bt BT_NXT  &bt BT_CLR
+    &sys_reset  &bootloader  &none       &none      &bt BT_CLR  &bt BT_PRV      &bt BT_PRV  &bt BT_CLR  &none       &none       &bootloader  &sys_reset
+                                         &none      &bt BT_NXT  &none           &none       &bt BT_NXT  &none
                         >;
                 };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
